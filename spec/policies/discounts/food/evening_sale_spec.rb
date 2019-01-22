@@ -5,8 +5,8 @@ describe Discounts::Food::EveningSale do
     let(:quantity) { 2 }
     let(:time) { Time.new(2002, 10, 31, 19, 2) }
     let(:order) { create(:order, created_at: time) }
-    let(:food_product) { create(:product_type, name: 'food') }
-    let(:computer_product) { create(:product_type, name: 'computer') }
+    let(:food_product) { create(:product_type, name: ProductTypes::Categories::FOOD) }
+    let(:computer_product) { create(:product_type, name: ProductTypes::Categories::COMPUTER) }
     let(:food) { create(:product, product_type: food_product) }
     let(:mouse) { create(:product, product_type: computer_product) }
     let!(:order_item) { order.order_items.create(product: food, quantity: quantity, price: food.price * quantity) }

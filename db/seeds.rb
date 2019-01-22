@@ -9,8 +9,8 @@ halytska_zdoba = Brand.create!(name: 'Галицька здоба')
 molokia = Brand.create!(name: 'Молокія')
 
 # product types
-food_type = ProductType.create!(name: 'food')
-computer_type = ProductType.create!(name: 'computer')
+food_type = ProductType.create!(name: ProductTypes::Categories::FOOD)
+computer_type = ProductType.create!(name: ProductTypes::Categories::COMPUTER)
 mouse_type = computer_type.child_product_types.create!(name: 'mouse')
 keyboard_type = computer_type.child_product_types.create!(name: 'keyboard')
 
