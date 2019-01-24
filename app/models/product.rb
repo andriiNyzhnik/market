@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
-  belongs_to :product_type
+  belongs_to :category
   belongs_to :brand
 
   validates_presence_of :name, :price, :color, :description
 
-  scope :by_product_type, ->(product_type) { where(product_type: product_type) }
+  scope :by_category, ->(category) { where(category: category) }
 end

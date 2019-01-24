@@ -22,6 +22,7 @@ module Orders
 
     def add_to_order(product)
       if (order_item = order.order_items.by_product(product).first)
+        order_item.price += product.price
         order_item.quantity += 1
         order_item.save
       else

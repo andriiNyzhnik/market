@@ -31,6 +31,12 @@ describe Orders::Purchase do
           subject.add_product!(mouse)
         }.to change { order_item.reload.quantity }.by(1)
       end
+
+      it 'updates price' do
+        expect {
+          subject.add_product!(mouse)
+        }.to change { order_item.reload.price }.by(mouse.price)
+      end
     end
   end
 end

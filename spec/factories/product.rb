@@ -5,7 +5,7 @@ FactoryBot.define do
     description { 'test' }
     price { 2.34 }
 
-    product_type
+    category
     brand
   end
 end
