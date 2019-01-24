@@ -11,8 +11,8 @@ molokia = Brand.create!(name: 'Молокія')
 # product types
 food_type = Category.create!(name: Categories::FOOD)
 computer_type = Category.create!(name: Categories::COMPUTER)
-mouse_type = computer_type.child_categories.create!(name: 'mouse')
-keyboard_type = computer_type.child_categories.create!(name: 'keyboard')
+mouse_type = computer_type.child_categories.create!(name: Categories::MOUSE)
+keyboard_type = computer_type.child_categories.create!(name: Categories::KEYBOARD)
 
 # products
 mouse = Product.create!(name: 'pro2', category: mouse_type, color: 'white', price: 5.67, brand: logitech, description: 'bla')
