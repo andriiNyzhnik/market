@@ -4,7 +4,7 @@ module Orders
       @order = order
     end
 
-    def calculate!
+    def apply!
       Discounts::ALL.each do |rule_class|
         rule_class.discount(order).each do |order_item, discount|
           order_item.price -= discount

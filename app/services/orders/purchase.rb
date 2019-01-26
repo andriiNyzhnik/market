@@ -8,8 +8,8 @@ module Orders
       add_to_order(product)
     end
 
-    def finalize!
-      Orders::Discount.calculate!(order)
+    def apply_discount!
+      Orders::Discount.apply!(order)
     end
 
     private

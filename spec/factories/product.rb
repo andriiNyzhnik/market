@@ -7,5 +7,9 @@ FactoryBot.define do
 
     category
     brand
+
+    trait :white do
+      color { Colors::WHITE }
+    end
   end
 end
