@@ -1,24 +1,56 @@
-# README
+### Market
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Application Setup
 
-Things you may want to cover:
+#### Clone repo
 
-* Ruby version
+```sh
+git clone git@github.com:andriiNyzhnik/market.git
+```
 
-* System dependencies
+#### Install the GEM dependencies
 
-* Configuration
+```sh
+$ market ~> gem install bundler
+$ market ~> bundle install
+```
 
-* Database creation
+#### Setup Database
 
-* Database initialization
+```sh
+$ market ~> rake db:create
+$ market ~> rake db:schema:load
+$ market ~> rake db:seed
+```
 
-* How to run the test suite
+### Start the Application
 
-* Services (job queues, cache servers, search engines, etc.)
+Start the  application
 
-* Deployment instructions
+```sh
+$ market ~> rails s
+```
 
-* ...
+## Tests
+
+To run the RSpec tests:
+
+```sh
+$ market ~>  rspec
+```
+
+### Flow
+```sh
+# select user
+user = User.first
+
+# create purchase instance
+pur = Orders::Purchase.new user
+
+# add products to order
+p = Product.first
+pur.add_product! p
+
+# calculate discount
+pur.apply_discount! 
+```
