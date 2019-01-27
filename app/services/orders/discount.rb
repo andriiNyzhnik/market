@@ -4,6 +4,10 @@ module Orders
       @order = order
     end
 
+    def self.apply!(*args)
+      new(*args).apply!
+    end
+
     def apply!
       Discounts::ALL.each do |rule_class|
         rule_class.discount(order).each do |order_item, discount|

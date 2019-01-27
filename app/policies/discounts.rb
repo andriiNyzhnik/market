@@ -3,5 +3,5 @@ module Discounts
   COMPUTER = [Computer::Accessoires].freeze
   GENERAL = [WhiteSale].freeze
 
-  ALL = [FOOD + COMPUTER + GENERAL].freeze
+  ALL = [FOOD + COMPUTER + GENERAL].flatten.freeze
 end
